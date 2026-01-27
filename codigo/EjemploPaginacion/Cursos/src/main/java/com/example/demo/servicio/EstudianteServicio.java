@@ -1,0 +1,25 @@
+package com.example.demo.servicio;
+
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.example.demo.entidad.Estudiante;
+
+public interface EstudianteServicio {
+	 	Estudiante guardarEstudiante(Estudiante estudiante);
+	 	Estudiante actualizarEstudiante(Long id, Estudiante estudiante);
+	    void eliminarEstudiante(Long id);
+	    Estudiante buscarEstudiantePorId(Long id);
+	    List<Estudiante> listarTodosLosEstudiantes();
+	    List<Estudiante> buscarEstudiantesPorNombre(String nombre);
+	    Set<Estudiante> obtenerEstudiantesPorCurso(Long idCurso);
+	    Boolean agregarCursoAEstudiante(Long idEstudiante, Long idCurso);
+	    //Agregados para realizar la 'Paginación' 
+	    Page<Estudiante> listarTodosLosEstudiantes(Pageable pageable);
+	    Page<Estudiante> buscarEstudiantesPorNombre(String nombre, Pageable pageable);
+	    Page<Estudiante> buscarEstudiantesContieneNombre(String nombre, Pageable pageble);
+}

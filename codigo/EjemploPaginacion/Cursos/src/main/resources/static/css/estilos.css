@@ -1,0 +1,75 @@
+/* estilos.css */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Cambia el color de fondo cuando se pasa el mouse por encima */
+.button:hover {
+  background-color: #2980b9;
+}
+
+/* Contenedor principal */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+/* Elementos de página */
+.pagination .page-item {
+    margin: 0 3px;
+}
+
+.pagination .page-link,
+.pagination .page-item.active span {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: #007bff;          /* Texto azul Bootstrap */
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover para enlaces activos */
+.pagination .page-link:hover,
+.pagination .page-item.active span {
+    color: #0056b3;          /* Azul más oscuro al pasar el ratón */
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Página activa (sin enlace) */
+.pagination .page-item.active span {
+    font-weight: 600;
+    cursor: default;
+    background-color: #007bff;
+    color: #fff;
+}
