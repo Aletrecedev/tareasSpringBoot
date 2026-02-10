@@ -58,3 +58,38 @@ spring.datasource.password=
 ## 8) Mejoras extra (opcional)
 - Estilos con Bootstrap 4 (CDN añadido en las vistas).
 - Botón de confirmación antes de eliminar.
+
+# 🛡️ Gestión de Productos (Con Seguridad y Roles)
+
+Aplicación web CRUD desarrollada con Spring Boot, Thymeleaf y base de datos H2.
+Incluye un sistema completo de seguridad y gestión de errores.
+
+## 🚀 Características Nuevas
+* **Spring Security:** Login y Logout personalizados.
+* **Roles de Usuario:**
+    * **ADMIN:** Control total (Crear, Editar, Eliminar productos y ver consola H2).
+    * **USUARIO:** Acceso de solo lectura (Ver listado y paginación).
+* **Base de Datos H2:** Los usuarios y productos se generan automáticamente al iniciar.
+* **Gestión de Errores:** Páginas personalizadas para errores 404, 403 (Prohibido) y 500.
+
+## 🔑 Credenciales de Acceso (Importante)
+Para probar la aplicación, utiliza los siguientes usuarios pre-cargados:
+
+| Rol | Usuario | Contraseña | Permisos |
+| :--- | :--- | :--- | :--- |
+| **Administrador** | `admin` | `admin` | ✅ Crear/Editar/Borrar + Consola H2 |
+| **Usuario** | `user` | `user` | 👁️ Solo ver productos |
+
+## 🛠️ Tecnologías
+* Java 17 / 21
+* Spring Boot 3
+* Spring Security 6
+* Spring Data JPA
+* Thymeleaf + Thymeleaf Extras (Security)
+* H2 Database
+* Bootstrap 4
+
+## ⚙️ Cómo ejecutar
+1.  `mvn spring-boot:run`
+2.  Abrir navegador en: `http://localhost:8080/productos`
+3.  Consola H2 (Solo Admin): `http://localhost:8080/h2-console`
