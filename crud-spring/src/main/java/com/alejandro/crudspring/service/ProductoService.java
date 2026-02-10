@@ -3,6 +3,8 @@ package com.alejandro.crudspring.service;
 import com.alejandro.crudspring.entity.Producto;
 import com.alejandro.crudspring.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +18,11 @@ public class ProductoService {
 
     public List<Producto> listarProductos() {
         return productoRepository.findAll();
+    }
+
+
+    public Page<Producto> listarProductos(Pageable pageable) {
+        return productoRepository.findAll(pageable);
     }
 
 

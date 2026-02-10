@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 
 @Controller
 public class ProductoController {
@@ -15,9 +18,16 @@ public class ProductoController {
 
 
     @GetMapping("/productos")
-    public String listarProductos(Model model) {
-        // "productos" es la variable que usaremos en el HTML
-        model.addAttribute("productos", productoService.listarProductos());
+    public String listarProductos(@PageableDefault(size = 10) Pageable pageable, Model model) {
+
+        Page<Producto> pagina = productoService.listarProductos(pageable);
+
+        model.addAttribute("productos", pagina);
+
+        model.addAttribute("totalItems", pagina.getTotalElements());
+        model.addAttribute("totalPages", pagina.getTotalPages());
+        model.addAttribute("currentPage", pagina.getNumber());
+
         return "lista_productos";
     }
 
