@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import java.security.Principal;
 
 @Controller
 public class ProductoController {
@@ -18,7 +19,7 @@ public class ProductoController {
 
 
     @GetMapping("/productos")
-    public String listarProductos(@PageableDefault(size = 10) Pageable pageable, Model model) {
+    public String listarProductos(@PageableDefault(size = 10) Pageable pageable, Model model, Principal principal) {
 
         Page<Producto> pagina = productoService.listarProductos(pageable);
 
@@ -27,6 +28,11 @@ public class ProductoController {
         model.addAttribute("totalItems", pagina.getTotalElements());
         model.addAttribute("totalPages", pagina.getTotalPages());
         model.addAttribute("currentPage", pagina.getNumber());
+
+
+        if (principal != null) {
+            model.addAttribute("nombreUsuario", principal.getName());
+        }
 
         return "lista_productos";
     }
