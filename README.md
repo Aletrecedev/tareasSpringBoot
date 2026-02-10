@@ -72,7 +72,7 @@ Incluye un sistema completo de seguridad y gestión de errores.
 * **Base de Datos H2:** Los usuarios y productos se generan automáticamente al iniciar.
 * **Gestión de Errores:** Páginas personalizadas para errores 404, 403 (Prohibido) y 500.
 
-## 🔑 Credenciales de Acceso (Importante)
+## 🔑 Credenciales de Acceso 
 Para probar la aplicación, utiliza los siguientes usuarios pre-cargados:
 
 | Rol | Usuario | Contraseña | Permisos |
