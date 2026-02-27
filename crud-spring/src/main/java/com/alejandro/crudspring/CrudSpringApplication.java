@@ -40,7 +40,7 @@ public class CrudSpringApplication {
                     p.setStock((int) (Math.random() * 100 + 10));
                     productoRepository.save(p);
                 }
-                System.out.println("✅ ¡50 Productos creados! La paginación va a quedar genial.");
+                System.out.println(" 50 Productos creados!");
             }
 
             // 2. CREAR USUARIOS DE SEGURIDAD
@@ -59,7 +59,7 @@ public class CrudSpringApplication {
                 user.setRol(Rol.USUARIO);
                 usuarioRepository.save(user);
 
-                System.out.println("✅ Usuarios creados: admin/admin y user/user");
+                System.out.println(" Usuarios creados: admin/admin y user/user");
             }
         };
     }

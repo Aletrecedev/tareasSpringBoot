@@ -23,8 +23,7 @@ public class ProductoController {
 
         Page<Producto> pagina = productoService.listarProductos(pageable);
 
-        model.addAttribute("productos", pagina);
-
+        model.addAttribute("productos", pagina.getContent());
         model.addAttribute("totalItems", pagina.getTotalElements());
         model.addAttribute("totalPages", pagina.getTotalPages());
         model.addAttribute("currentPage", pagina.getNumber());

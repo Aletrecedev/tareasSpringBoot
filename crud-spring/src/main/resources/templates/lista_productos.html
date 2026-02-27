@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">📦 Gestión de Productos</span>
+        <span class="navbar-brand mb-0 h1"> Gestión de Productos</span>
 
         <div class="d-flex align-items-center">
             <span class="text-white mr-3" th:if="${nombreUsuario != null}">
@@ -18,7 +18,7 @@
 
             <form th:action="@{/logout}" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger btn-sm">
-                    Cerrar Sesión 🚪
+                    Cerrar Sesión
                 </button>
             </form>
         </div>
@@ -48,8 +48,8 @@
             <td th:text="${producto.stock}">...</td>
 
             <td sec:authorize="hasRole('ADMIN')">
-                <a th:href="@{/productos/editar/{id}...}" class="btn btn-info btn-sm">Editar</a>
-                <a th:href="@{/productos/eliminar/{id}...}" class="btn btn-danger btn-sm" ...>Eliminar</a>
+                <a th:href="@{/productos/editar/{id}(id=${producto.id})}" class="btn btn-info btn-sm">Editar</a>
+                <a th:href="@{/productos/eliminar/{id}(id=${producto.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
             </td>
         </tr>
         </tbody>
